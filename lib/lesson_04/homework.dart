@@ -80,4 +80,12 @@ void record() {
 /// Завдання 5: Nullable (опціонально)
 /// Створи змінну String? nickname — може бути null або ім'я.
 /// Виведи її через ??: якщо null — виведи "Немає", інакше — значення.
-void nullable() {}
+void nullable() {
+  String? nickname;
+  print('Нікнейм: ${nickname ?? "Немає"}');
+
+  // Змінимо значення, щоб перевірити інший варіант
+  nickname = 'Dart_Weider';
+  // ignore: dead_null_aware_expression
+  print('Нікнейм після зміни: ${nickname ?? "Немає"}');
+}
