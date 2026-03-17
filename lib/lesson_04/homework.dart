@@ -64,8 +64,18 @@ void varFinalConst() {
 }
 
 /// Завдання 4: Record
-/// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та віком і виведи обидва поля.
-void record() {}
+/// Створи іменований та позиційний record з твоїм ім'ям та віком і виведи.
+void record() {
+  final personRecord = (name: 'Толя', age: 39);
+  print('Іменований record: $personRecord');
+  print("Ім'я з record: ${personRecord.name}");
+  print('Вік з record: ${personRecord.age}');
+
+  final positionalRecord = ('Толя', 39);
+  print('Позиційний record: $positionalRecord');
+  print("Ім'я з позиційного record: ${positionalRecord.$1}");
+  print('Вік з позиційного record: ${positionalRecord.$2}');
+}
 
 /// Завдання 5: Nullable (опціонально)
 /// Створи змінну String? nickname — може бути null або ім'я.
