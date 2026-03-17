@@ -13,7 +13,21 @@ void main() {
 /// - height (double) — твій зріст у метрах
 /// - name (String) — твоє ім'я
 /// - isStudent (bool) — чи ти студент
-void primitives() {}
+void primitives() {
+  final age = 39;
+  final height = 1.75;
+  final name = 'Толя';
+  final isStudent = false;
+
+  print('Мене звати $name. Мені $age років.');
+  print('Зріст: $height');
+  print('Чи є студентом: $isStudent');
+  print('Типи змінних:');
+  print('  age: ${age.runtimeType}');
+  print('  height: ${height.runtimeType}');
+  print('  name: ${name.runtimeType}');
+  print('  isStudent: ${isStudent.runtimeType}');
+}
 
 /// Завдання 2: Колекції
 /// 1. List — 3 твої улюблені кольори
