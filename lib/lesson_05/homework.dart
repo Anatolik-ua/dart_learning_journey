@@ -85,7 +85,7 @@ void task3() {
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
 void task4() {
-final temperature = 20;
+  final temperature = 20;
 
   final status = temperature > 25 ? 'Тепло' : 'Прохолодно';
   print('Температура $temperature: $status');
@@ -110,7 +110,20 @@ final temperature = 20;
 /// Поділіть бали на кількість запитань.
 /// Виведіть остаточний результат.
 
-void task5() {}
+void task5() {
+  double score = 0; // double для можливості дробових результатів після ділення
+  final correctAnswers = 17;
+  final mistakes = 3;
+  final totalQuestions = 20;
+
+  score += correctAnswers * 10; // бали за правильні відповіді
+  score -= mistakes * 5; // бали за помилки
+
+  score *= 2;
+  score /= totalQuestions;
+
+  print('Остаточний результат: $score');
+}
 
 /// Завдання 6: Умовні конструкції if/else
 /// Створіть змінну examScore з значенням 56
