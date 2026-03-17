@@ -22,14 +22,14 @@ void task1() {
   final height = 30.9;
 
   final area = width * height;
-  
+
   final perimeter = 2 * (width + height);
 
   print('Площа прямокутника: $area');
   print('Периметр прямокутника: $perimeter');
 
   final fullSquares = area ~/ 1;
-  
+
   print('Кількість повних квадратів 1х1: $fullSquares');
 }
 
@@ -41,7 +41,20 @@ void task1() {
 /// Чи менше число за 100.
 /// Чи ділиться число на 5 без залишку.
 /// Виведіть всі результати.
-void task2() {}
+void task2() {
+  final number = 76;
+
+  print('Перевірка числа $number:');
+
+  final isGreaterThan50 = number > 50;
+  print('Чи більше за 50: $isGreaterThan50');
+
+  final isLessThan100 = number < 100;
+  print('Чи менше за 100: $isLessThan100');
+
+  final isDivisibleBy5 = number % 5 == 0;
+  print('Чи ділиться на 5 без залишку: $isDivisibleBy5');
+}
 
 /// Завдання 3: Логічні оператори
 /// Створіть змінні hasMoney і isStoreOpen (типу bool).
