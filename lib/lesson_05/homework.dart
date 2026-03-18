@@ -219,7 +219,18 @@ void task8() {
 /// Якщо число парне — вивести “Парне число: …”,
 /// якщо непарне — “Непарне число: …”.
 
-void task9() {}
+void task9() {
+  var number = 10;
+
+  while (number > 0) {
+    if (number % 2 == 0) {
+      print('Парне число: $number');
+    } else {
+      print('Непарне число: $number');
+    }
+    number--;
+  }
+}
 
 /// Завдання 10: Break і Continue
 /// Створіть цикл for від 1 до 20.
