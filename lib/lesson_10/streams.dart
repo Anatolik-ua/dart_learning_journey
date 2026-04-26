@@ -14,9 +14,11 @@ Future<void> task6() async {
   }
 
   print('\nВивід через listen:');
-  secondStream.listen((int number) {
+  await secondStream.listen((int number) {
     print('Отримано: $number');
-  });
+  }).asFuture<void>();
+
+  print('--- Task 6 завершено повністю ---');
 }
 
 Future<void> task7() async {
@@ -32,7 +34,33 @@ Future<void> task7() async {
   }
 }
 
+Future<void> task8() async {
+  print('\n--- Task 8: StreamController ---');
+
+  final controller = StreamController<String>();
+  final completer = Completer<void>();
+
+  controller.stream.listen(
+    (final String value) {
+      print('Отримано з контролера: $value');
+    },
+    onDone: () {
+      print('Стрім завершено');
+      completer.complete();
+    },
+  );
+
+  controller.add('Hello');
+  controller.add('World');
+  controller.add('Dart');
+  controller.add('Yoohoo');
+
+  await controller.close();
+  await completer.future;
+}
+
 void main() async {
-  // await task6();
+  await task6(); // через .asFuture(), щоб не вмішувалося в інші таски
   await task7();
+  await task8();
 }
