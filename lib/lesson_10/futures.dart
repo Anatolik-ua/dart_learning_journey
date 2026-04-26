@@ -50,6 +50,17 @@ Future<void> task4() async {
   print('Паралельне виконання зайняло: ${stopwatch.elapsed.inMilliseconds} мс');
 }
 
+Future<String> delayedCountdown(int seconds) async {
+  print('\n--- Task 5: Зворотний відлік ---');
+
+  for (var i = seconds; i > 0; i--) {
+    print('$i...');
+    await Future<void>.delayed(const Duration(seconds: 1));
+  }
+
+  return 'Старт!';
+}
+
 void main() async {
   print('--- Task 1 & 2 ---');
 
@@ -62,4 +73,7 @@ void main() async {
 
   await task3();
   await task4();
+
+  final countdownResult = await delayedCountdown(5);
+  print(countdownResult);
 }
