@@ -20,6 +20,20 @@ String getAgeLabel(int age) {
   return 'років';
 }
 
+Future<void> task3() async {
+  print('\n--- Task 3: Послідовне виконання ---');
+
+  final stopwatch = Stopwatch()..start();
+
+  final name = await fetchName();
+  final ageString = await fetchAge();
+
+  stopwatch.stop();
+
+  print('Мене звати $name, мені $ageString років.');
+  print('Послідовне виконання зайняло: ${stopwatch.elapsed.inMilliseconds} мс');
+}
+
 void main() async {
   print('--- Task 1 & 2 ---');
 
@@ -29,4 +43,6 @@ void main() async {
   final ageString = await fetchAge();
   final age = int.parse(ageString);
   print('Мені $age ${getAgeLabel(age)}');
+
+  await task3();
 }
