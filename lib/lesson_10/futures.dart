@@ -34,6 +34,22 @@ Future<void> task3() async {
   print('Послідовне виконання зайняло: ${stopwatch.elapsed.inMilliseconds} мс');
 }
 
+Future<void> task4() async {
+  print('\n--- Task 4: Паралельне виконання (Future.wait) ---');
+
+  final stopwatch = Stopwatch()..start();
+
+  final results = await Future.wait<String>([fetchName(), fetchAge()]);
+
+  stopwatch.stop();
+
+  final name = results[0];
+  final ageString = results[1];
+
+  print('Мене звати $name, мені $ageString років.');
+  print('Паралельне виконання зайняло: ${stopwatch.elapsed.inMilliseconds} мс');
+}
+
 void main() async {
   print('--- Task 1 & 2 ---');
 
@@ -45,4 +61,5 @@ void main() async {
   print('Мені $age ${getAgeLabel(age)}');
 
   await task3();
+  await task4();
 }
