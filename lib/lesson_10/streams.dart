@@ -19,6 +19,20 @@ Future<void> task6() async {
   });
 }
 
+Future<void> task7() async {
+  print('\n--- Task 7: Stream.periodic ---');
+
+  final periodicStream = Stream<int>.periodic(
+    const Duration(seconds: 1),
+    (int computationCount) => computationCount + 1,
+  );
+
+  await for (final int number in periodicStream.take(10)) {
+    print('$number...');
+  }
+}
+
 void main() async {
-  await task6();
+  // await task6();
+  await task7();
 }
